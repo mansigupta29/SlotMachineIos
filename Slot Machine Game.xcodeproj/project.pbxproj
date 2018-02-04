@@ -7,18 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D743C012027A8A30091851E /* Orange.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D743C002027A8A30091851E /* Orange.jpg */; };
-		6D743C032027A8A90091851E /* Strawberry.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D743C022027A8A90091851E /* Strawberry.png */; };
 		F5F8678D1ACE789600565112 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8678C1ACE789600565112 /* AppDelegate.swift */; };
 		F5F8678F1ACE789600565112 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8678E1ACE789600565112 /* ViewController.swift */; };
 		F5F867921ACE789600565112 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F867901ACE789600565112 /* Main.storyboard */; };
 		F5F867941ACE789600565112 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5F867931ACE789600565112 /* Images.xcassets */; };
 		F5F867971ACE789600565112 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5F867951ACE789600565112 /* LaunchScreen.xib */; };
-		F5F867B11ACE7F3900565112 /* Grape.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F867AC1ACE7F3900565112 /* Grape.png */; };
-		F5F867B21ACE7F3900565112 /* Bell.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F867AD1ACE7F3900565112 /* Bell.png */; };
-		F5F867B31ACE7F3900565112 /* Banana.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F867AE1ACE7F3900565112 /* Banana.png */; };
-		F5F867B41ACE7F3900565112 /* Seven.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5F867AF1ACE7F3900565112 /* Seven.jpg */; };
-		F5F867B51ACE7F3900565112 /* Apple.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F867B01ACE7F3900565112 /* Apple.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,8 +25,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6D743C002027A8A30091851E /* Orange.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Orange.jpg; sourceTree = "<group>"; };
-		6D743C022027A8A90091851E /* Strawberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Strawberry.png; sourceTree = "<group>"; };
 		F5F867871ACE789600565112 /* Slot Machine Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slot Machine Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5F8678B1ACE789600565112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5F8678C1ACE789600565112 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,11 +33,6 @@
 		F5F867931ACE789600565112 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F5F867961ACE789600565112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F5F8679C1ACE789600565112 /* Slot Machine GameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Slot Machine GameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F5F867AC1ACE7F3900565112 /* Grape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Grape.png; sourceTree = "<group>"; };
-		F5F867AD1ACE7F3900565112 /* Bell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bell.png; sourceTree = "<group>"; };
-		F5F867AE1ACE7F3900565112 /* Banana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Banana.png; sourceTree = "<group>"; };
-		F5F867AF1ACE7F3900565112 /* Seven.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Seven.jpg; sourceTree = "<group>"; };
-		F5F867B01ACE7F3900565112 /* Apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Apple.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,13 +56,6 @@
 		F5F8677E1ACE789600565112 = {
 			isa = PBXGroup;
 			children = (
-				6D743C022027A8A90091851E /* Strawberry.png */,
-				6D743C002027A8A30091851E /* Orange.jpg */,
-				F5F867AC1ACE7F3900565112 /* Grape.png */,
-				F5F867AD1ACE7F3900565112 /* Bell.png */,
-				F5F867AE1ACE7F3900565112 /* Banana.png */,
-				F5F867AF1ACE7F3900565112 /* Seven.jpg */,
-				F5F867B01ACE7F3900565112 /* Apple.png */,
 				F5F867891ACE789600565112 /* SlotMachineGame */,
 				F5F867881ACE789600565112 /* Products */,
 			);
@@ -200,14 +179,7 @@
 			files = (
 				F5F867921ACE789600565112 /* Main.storyboard in Resources */,
 				F5F867971ACE789600565112 /* LaunchScreen.xib in Resources */,
-				F5F867B31ACE7F3900565112 /* Banana.png in Resources */,
-				F5F867B41ACE7F3900565112 /* Seven.jpg in Resources */,
-				6D743C012027A8A30091851E /* Orange.jpg in Resources */,
-				F5F867B21ACE7F3900565112 /* Bell.png in Resources */,
 				F5F867941ACE789600565112 /* Images.xcassets in Resources */,
-				F5F867B51ACE7F3900565112 /* Apple.png in Resources */,
-				6D743C032027A8A90091851E /* Strawberry.png in Resources */,
-				F5F867B11ACE7F3900565112 /* Grape.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
