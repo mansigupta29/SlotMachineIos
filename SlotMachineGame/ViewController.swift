@@ -1,8 +1,8 @@
 //Slot Machine Game
-// Version 1.3
+// Version 1.4
 // Team Members
 //Mansi Gupta (300969816)
-//Abhinav Sharma (3009)
+//Abhinav Sharma (300975677)
 // This is a simple Slot Machine Game
 // Date: 4 Feb 2017
 
