@@ -15,7 +15,6 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     /*--- Some pre declared variables ---*/
     var playerMoney:Int = 1000
     var playerBet: Int = 10
-    var jackpot:Int = 5000
     var winnings:Int = 0
     var component1: Int = 0
     var component2: Int = 0
@@ -25,23 +24,30 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
   /*--- Outlets ---*/
     
     /*--- 3 components of reels ---*/
+ 
     @IBOutlet weak var picker: UIPickerView!
-    @IBOutlet weak var picker2: UIPickerView!
-    @IBOutlet weak var picker3: UIPickerView!
+    
 
     /*labels, textfield and button for UI ---*/
+    
     @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var jackpotLbl: UILabel!
-    @IBOutlet weak var playerMoneyLbl: UILabel!
-    @IBOutlet weak var spinBtn: UIButton!
-    @IBOutlet weak var resetBtn: UIButton!
-    @IBOutlet weak var quitBtn: UIButton!
+    
+    
+    @IBOutlet weak var playeMoneyLbl: UITextField!
     @IBOutlet weak var playerBetTxt: UITextField!
+    
+    @IBOutlet weak var spinBtn: UIButton!
+    
+    @IBOutlet weak var resetBtn: UIButton!
+    
+    @IBOutlet weak var quitBtn: UIButton!
+    
+   
     
 
     /*--- to show number of component per picker ---*/
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 3
     }
     
     /*--- number of rows per picker ---*/
@@ -53,13 +59,13 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     /*--- row height of each picker ---*/
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         
-        return 60.0
+        return 70.0
         
     }
     
     /*--- width of each picker ---*/
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        return 60.0
+        return 120.0
     }
     
     /*--- to generate random number ---*/
@@ -75,11 +81,13 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
         /*--- view for each picker ---*/
-        let myView = UIView(frame: CGRect(x: 0, y: 0, width: pickerView.bounds.width - 30, height: 60))
+        //let myView = UIView(frame: CGRect(x: 0, y: 0, width: pickerView.bounds.width - 250, height: 60))
         
         /* image view ---*/
-        let myImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
+        //let myImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
+        let myView = UIView(frame: CGRect(x:0,y:0, width:60, height:60))
         
+        let myImageView = UIImageView(frame: CGRect(x:0,y:0,width:60,height:60))
         var Banana:Int=0
         var Grape:Int=1
         var Strawberry:Int=2
@@ -151,7 +159,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     else if playerMoney == 0
     {
         resultLabel.text="You ran out of Money! Do you want to play again?"
-        playerMoneyLbl.text="Player Money : 0"
+        playeMoneyLbl.text="0"
         spinBtn.isHidden=true
     }else if playerBet == 0 {
         resultLabel.text="Please enter a valid bet amount"
@@ -159,8 +167,8 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         {
             resultLabel.text=""
             picker.selectRow((randomNumber()) , inComponent: 0, animated: true)
-            picker2.selectRow((randomNumber()) , inComponent: 0, animated: true)
-            picker3.selectRow((randomNumber()) , inComponent: 0, animated: true)
+            picker.selectRow((randomNumber()) , inComponent: 1, animated: true)
+            picker.selectRow((randomNumber()) , inComponent: 2, animated: true)
             determineWinnings();
         }
    
@@ -170,15 +178,13 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     @IBAction func reset(_ sender: AnyObject) {
        
        
-        playerMoneyLbl.text="Player Money : 1000 "
+        playeMoneyLbl.text="1000 "
         playerBetTxt.text = "10"
-        jackpotLbl.text = "Jackpot : 5000"
         resultLabel.text="Best Of Luck!"
         spinBtn.isHidden=false
         quitBtn.isHidden = false
         
         playerMoney = 1000
-        jackpot = 5000
         playerBet = 10
         winnings = 0
     
@@ -194,7 +200,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     func showWinMessage() {
         playerMoney += winnings
             resultLabel.text = "You Won: $\(winnings)"
-        playerMoneyLbl.text="Player Money : \(playerMoney)"
+        playeMoneyLbl.text="\(playerMoney)"
         checkJackPot()
     }
 
@@ -202,16 +208,16 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     func showLossMessage() {
         playerMoney -= playerBet
         resultLabel.text = "You Lost! $\(playerBet)"
-          playerMoneyLbl.text="Player Money : \(playerMoney)"
+        playeMoneyLbl.text="\(playerMoney)"
     }
     
     /*--- Check to see if the player won the jackpot ---*/
     func checkJackPot() {
-        
+        var jackpot:Int = 10
         /*--- To get the image of each picker ---*/
         component1 = picker.selectedRow(inComponent: 0)
-        component2 = picker2.selectedRow(inComponent: 0)
-        componenet3 = picker3.selectedRow(inComponent: 0)
+        component2 = picker.selectedRow(inComponent: 1)
+        componenet3 = picker.selectedRow(inComponent: 2)
         
         if(component1>6){
             component1 = component1%7
@@ -226,11 +232,10 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         /*--- Condition to win jackpot ---*/
          if (component1 == component2 && component2 == componenet3  ){
                 if (component1 == 5 && component2 == 5 && componenet3 == 5) || (component1 == 6 && component2 == 6 && componenet3 == 6) {
+                    jackpot = jackpot * playerBet
                     resultLabel.text = "You Won the $\(jackpot) Jackpot"
                 playerMoney += jackpot
-                playerMoneyLbl.text="Player Money : \(playerMoney)"
-                jackpotLbl.text = "Jackpot : 1000"
-                jackpot = 1000
+                playeMoneyLbl.text="\(playerMoney)"
                 }
             }
         }
@@ -240,8 +245,8 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     {
         /*--- To get the image of each picker ---*/
         component1 = picker.selectedRow(inComponent: 0)
-        component2 = picker2.selectedRow(inComponent: 0)
-        componenet3 = picker3.selectedRow(inComponent: 0)
+        component2 = picker.selectedRow(inComponent: 1)
+        componenet3 = picker.selectedRow(inComponent: 2)
         
         if(component1>6){
             component1 = component1%7
